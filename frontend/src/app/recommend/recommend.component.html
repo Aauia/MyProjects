@@ -1,0 +1,27 @@
+<div class="movie-selector">
+  <img src="https://i.imgur.com/IcM5sNs.png" class="totoro-icon" alt="Totoro">
+  
+  <h2>Select a Movie</h2>
+  
+  <fieldset class="search-select-group">
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Search Movies" (input)="onSearch()">
+    <select [(ngModel)]="selectedMovie" (change)="onMovieSelect()">
+      <option *ngFor="let movie of filteredMovies" [value]="movie">{{ movie }}</option>
+    </select>
+  </fieldset>
+
+  <div *ngIf="recommendedMovies.length > 0" class="recommendations">
+    <h3>Recommended Movies</h3>
+    <div class="movies">
+      <div class="movie" *ngFor="let movie of recommendedMovies">
+        <div class="movie-content" [ngStyle]="{'background-image': 'url(' + movie.poster + ')'}">
+          <h4>{{ movie.title }}</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="errorMessage" class="error">
+    <p>{{ errorMessage }}</p>
+  </div>
+</div>

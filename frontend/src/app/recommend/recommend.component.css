@@ -1,0 +1,155 @@
+body {
+  font-family: 'Georgia', serif;
+  background-image: url('https://wallpaperaccess.com/full/1669282.jpg'); /* Sky and clouds */
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  color: #3b3b3b;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+.movie-selector {
+  max-width: 960px;
+  margin: 80px auto;
+  background-color: rgba(255, 255, 240, 0.95);
+  padding: 60px;
+  border-radius: 20px;
+  border: 4px solid #e6d4b7;
+  box-shadow: 0 0 40px rgba(0,0,0,0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.totoro-icon {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 120px;
+  transform: rotate(10deg);
+  animation: float 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(10deg); }
+  50% { transform: translateY(-12px) rotate(10deg); }
+}
+
+h2, h3 {
+  color: #4b3c2e;
+  font-size: 2.6em;
+  margin-bottom: 30px;
+  font-family: 'Papyrus', 'Georgia', serif;
+  text-shadow: 1px 1px #fff;
+}
+
+.search-select-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 30px;
+  border: none;
+}
+
+input[type="text"], select {
+  padding: 14px;
+  font-size: 18px;
+  width: 280px;
+  border-radius: 10px;
+  border: 2px solid #8b7d6b;
+  background-color: #fdfaf3;
+  color: #5a4c3b;
+  outline: none;
+  transition: all 0.3s ease;
+  font-family: 'Georgia', serif;
+}
+
+input[type="text"]:focus, select:focus {
+  border-color: #6b8e23;
+  background-color: #f1ede3;
+  transform: scale(1.03);
+}
+
+.recommendations {
+  margin-top: 40px;
+}
+
+.movies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.movie {
+  background-color: #fffdf7;
+  padding: 14px;
+  border-radius: 15px;
+  width: 200px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  animation: fadeInUp 1s ease both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.movie:hover {
+  transform: translateY(-12px);
+}
+
+.movie-content {
+  background-size: cover;
+  background-position: center;
+  height: 280px;
+  border-radius: 12px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 12px;
+  background-color: #eae3d5;
+  position: relative;
+}
+
+.movie-content h4 {
+  background: rgba(255, 255, 245, 0.85);
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-size: 1.1em;
+  color: #3b3b3b;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.error {
+  color: #a94442;
+  font-weight: bold;
+  font-size: 1.3em;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .movie-selector {
+    padding: 30px;
+  }
+
+  input[type="text"], select {
+    width: 100%;
+  }
+
+  .movies {
+    flex-direction: column;
+    align-items: center;
+  }
+}

@@ -1,0 +1,33 @@
+.navbar {
+    background-color: #f582ae;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .navbar .logo img {
+    height: 40px;
+  }
+  
+  .navbar nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #001858;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .navbar nav a:hover,
+  .navbar nav a.active {
+    color: #8bd3dd;
+  }
